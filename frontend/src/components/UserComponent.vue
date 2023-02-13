@@ -50,7 +50,7 @@
         </div>
         <div class="flex justify-center my-5">
             <button @click="logout" class="bg-transparent text-xs hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-300 rounded">
-                Sign out of Gmail
+                Sign out
             </button>
         </div>
     </div>
