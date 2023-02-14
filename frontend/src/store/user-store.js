@@ -15,7 +15,7 @@ import {
 import { db } from '@/firebase-init'
 import moment from 'moment'
 
-axios.defaults.baseURL = 'http://localhost:4001/'
+axios.defaults.baseURL = 'https://quick-post-backend.vercel.app/'
 
 export const useUserStore = defineStore('user', {
     state: () => ({
