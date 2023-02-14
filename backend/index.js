@@ -21,3 +21,5 @@ app.post("/api/google-login", async(req, res) => {
 app.listen(4001, () => {
     console.log(`Server is ready at http://localhost:${4001}`);
 });
+
+module.exports = app;
