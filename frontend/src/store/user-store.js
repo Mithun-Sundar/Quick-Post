@@ -37,7 +37,7 @@ export const useUserStore = defineStore('user', {
             this.$state.picture = res.data.picture
             this.$state.firstName = res.data.given_name
             this.$state.lastName = res.data.family_name
-                // this.$state.lastName = res.data.family_name
+            this.$state.lastName = res.data.family_name
         },
 
         getEmailsByEmailAddress() {
@@ -56,6 +56,7 @@ export const useUserStore = defineStore('user', {
                             firstName: doc.data().firstName,
                             lastName: doc.data().lastName,
                             fromEmail: doc.data().email,
+                            picture: doc.data().picture,
                             toEmail: doc.data().toEmail,
                             subject: doc.data().subject,
                             body: doc.data().body,
@@ -81,6 +82,7 @@ export const useUserStore = defineStore('user', {
                     // createdAt: moment(docSnap.data().createdAt).format("MMM D HH:mm"),
                     firstName: docSnap.data().firstName,
                     fromEmail: docSnap.data().fromEmail,
+                    picture: docSnap.data().picture,
                     lastName: docSnap.data().lastName,
                     subject: docSnap.data().subject,
                     toEmail: docSnap.data().toEmail,
@@ -98,6 +100,7 @@ export const useUserStore = defineStore('user', {
                     firstName: this.$state.firstName,
                     lastName: this.$state.lastName,
                     fromEmail: this.$state.email,
+                    picture: this.$state.picture,
                     toEmail: data.toEmail,
                     subject: data.subject,
                     body: data.body,

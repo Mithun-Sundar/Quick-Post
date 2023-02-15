@@ -37,7 +37,7 @@
     <div class="w-full flex">
       <img
         class="rounded-full mt-8 mx-5 custom-img"
-        src="https://via.placeholder.com/45"
+        :src="img"
       />
       <div class="w-full my-4 mx-0.5">
         <div class="font-semibold text-sm mt-4 mb-4 text-white">
@@ -65,6 +65,7 @@
   const userStore = useUserStore()
 
   let email = ref({})
+  let img = ref('')
 
   onMounted(async () => {
     const res = await userStore.getEmailById(route.params.id)
@@ -77,11 +78,13 @@
       createdAt: moment(res.createdAt).format("MMM D HH:mm"),
       firstName: res.firstName,
       fromEmail: res.fromEmail,
+      picture:res.picture,
       lastName: res.lastName,
       subject: res.subject,
       hasViewed: res.hasViewed,
       toEmail: res.toEmail
     }
+    img.value= res.picture;
   })
 
   const deleteEmail = async (id) => {
